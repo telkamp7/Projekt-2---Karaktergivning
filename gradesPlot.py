@@ -12,17 +12,27 @@ def gradesPlot(grades):
         counts = np.append(counts, list(finalGrades).count(i)).astype(int)
     
     #Vectors, which names the ticks and decides their position.
-    ticks = ("-3","00","02","4","7","10","12")
-    tickspos = np.arange(1, 8)
+    tickshist = ("-3","00","02","4","7","10","12")
+    ticksposhist = np.arange(1, 8)
     
-    #Plotting
-    plt.bar(tickspos, counts, edgecolor = "black", color = "skyblue", width = 0.7)
-    plt.xticks(tickspos, ticks)
+    #Plotting the histogram
+    plt.bar(ticksposhist, counts, edgecolor = "black", color = "skyblue", width = 0.7)
+    plt.xticks(ticksposhist, tickshist)
     plt.yticks(np.arange(0, max(counts) + 1))
     plt.title("Final Grades")
     plt.ylabel("Number of Students")
     plt.xlabel("Grades")
+    plt.show()
     
+    #Plotting the plot
+    num_assignments = np.arange(0,len(data[0,:]) - 2)
+    
+    
+    plt.plot()
+    plt.title("Grades per assignment")
+    plt.xlabel("Assignments")
+    plt.ylabel("Grades")
+    plt.xticks(num_assignments)
 
 
 
