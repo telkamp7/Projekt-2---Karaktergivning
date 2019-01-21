@@ -24,13 +24,12 @@ def dataLoad(filename):
     #https://stackoverflow.com/questions/43401903/python-order-dataframe-alphabetically
     data = pd.DataFrame(data.values[index], data.index[index], data.columns)
     
+    data = np.array(data)
+    
     #Counting number of columns
-    numcol = len(data.columns)
+    numcol = len(data[0,:])
     
     #Adding all of the grades to one dataframe
-    datagrade = (data.iloc[:,2:numcol].astype(int))
-    #Converting into matrix
-    grades = np.array(datagrade)
-    
+    grades = (data[:,2:numcol].astype(int)) 
 
     return(data)
