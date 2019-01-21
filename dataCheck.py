@@ -35,7 +35,7 @@ def dataCheck(data):
     
     #Define length of matrix containing all the grades 
     n = len(grades)
-                    
+    
     #Create a for-loop that checks if the grade givin is contained in the grading scale:
     for i in range(n):
         #Only checks the columns that contains grades (numcol-2)
@@ -47,4 +47,5 @@ def dataCheck(data):
                 #plus the assignment in which the mistake occurs. 
                 print("{:s}, {:s} has an incorrect grade in assignment {}.".format(data[i,1],data[i,0],j+1))
     
+    print("")
                 
