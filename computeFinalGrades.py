@@ -2,7 +2,7 @@ import numpy as np
 from roundGrade import roundGrade
 
 #   Tests
-#grades = np.array([[4, 0, 4, 7], [7, -3, 12, 10], [2, 0, -3, 4]])
+grades = np.array([[4, 0, 4, 7], [7, -3, 12, 10], [2, 0, -3, 4]])
 #grades = np.array([[4],[7],[12]])
 
 def computeFinalGrades(grades):
