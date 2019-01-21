@@ -22,9 +22,9 @@ def dataCheck(data):
     #   Print errormessages. 
     if len(notunique)>0:
         print("The following student ID(s) were found to be duplicates: {}".format(notunique))
-        print("We found the following information on the student ID(s): \n{}".format(err),sep = "\n")
+        print("We found the following information on the student ID(s): \n{}\n".format(err),sep = "\n")
     else: 
-        print("We found no errors in the list of student IDs.")
+        print("We found no errors in the list of student IDs.\n")
 
 
     #Define a vector with the grading scale:
