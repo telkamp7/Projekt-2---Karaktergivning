@@ -24,15 +24,28 @@ def gradesPlot(grades):
     plt.xlabel("Grades")
     plt.show()
     
+    
     #Plotting the plot
-    num_assignments = np.arange(0,len(data[0,:]) - 2)
+    num_assignments = len(data[0,:]) - 2
     
-    
-    plt.plot()
+    for i in range(num_assignments):
+        for j in grades[:,i]:
+            if np.any(j == gradeScale):
+                var = np.asscalar(np.random.uniform(-0.1, 0.1, 1))
+                plt.plot(i + 1 + var, j + var, "b*")
+                
+            else:
+                var = np.asscalar(np.random.uniform(-0.1, 0.1, 1))
+                plt.plot(i+1 + var, j + var, "r*")
+        
+        
     plt.title("Grades per assignment")
     plt.xlabel("Assignments")
     plt.ylabel("Grades")
-    plt.xticks(num_assignments)
+    plt.yticks(gradeScale, tickshist)
+    plt.xticks(np.arange(1, num_assignments+1, 1))
+    plt.xlim(0,num_assignments + 1)
+    plt.show()
 
 
 
