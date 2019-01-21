@@ -41,6 +41,7 @@ def dataCheck(data):
             #If the grade is within the Scale, inserts a true
             if np.any(grades[i,j] == gradeScale):
                 grades[i,j] = True
+                print("We found no errors in the given grades.")
                 
             #If the grade is not within the scale, inserts false.
             else:
