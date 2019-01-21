@@ -24,9 +24,10 @@ def computeFinalGrades(grades):
     if M > 1:
         
         for j in range(len(grades[:,0])):
-            for k in range(len(grades[0,:])):
-                if grades[j,k] == -3:
-                    grades[j,:] = -3
+            if np.any(grades[j,:] == -3):
+                grades[j,:] = -3
+                    
+        
         
         #   We create a mask to remove the minimum grade for each student.
         rem_minimum_grades = np.ma.masked_where(grades == np.resize(grades.min(axis = 1),[grades.shape[0],1]), grades)
