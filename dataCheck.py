@@ -23,8 +23,7 @@ def dataCheck(data):
     if len(notunique)>0:
         print("The following student ID(s) were found to be duplicates: {}".format(notunique))
         print("We found the following information on the student ID(s): \n{}\n".format(err),sep = "\n")
-    else: 
-        print("We found no errors in the list of student IDs.\n")
+        
 
 
     #Define a vector with the grading scale:
@@ -35,7 +34,8 @@ def dataCheck(data):
     
     #Define length of matrix containing all the grades 
     n = len(grades)
-                    
+    
+    errs = 0
     #Create a for-loop that checks if the grade givin is contained in the grading scale:
     for i in range(n):
         #Only checks the columns that contains grades (numcol-2)
@@ -46,5 +46,11 @@ def dataCheck(data):
                 #Prints the name and student ID of the student that has an incorect grade according to the grading scale
                 #plus the assignment in which the mistake occurs. 
                 print("{:s}, {:s} has an incorrect grade in assignment {}.".format(data[i,1],data[i,0],j+1))
+                errs += 1
     
+    if errs == 0 and notunique == 0:
+        print("We found no errors in neither the student IDs nor the grades of the loaded data.\n")
+    
+    
+    print("")
                 
