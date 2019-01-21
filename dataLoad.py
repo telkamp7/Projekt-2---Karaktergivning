@@ -23,5 +23,5 @@ def dataLoad(filename):
     
     data = np.array(data)
     
-
+    print("There is a total number of {} students in the loaded data, and the number of graded assignments is {}.".format(len(data), len(data[0,:])-2))
     return(data)
