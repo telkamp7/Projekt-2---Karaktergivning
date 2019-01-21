@@ -48,7 +48,7 @@ def dataCheck(data):
                 print("{:s}, {:s} has an incorrect grade in assignment {}.".format(data[i,1],data[i,0],j+1))
                 errs += 1
     
-    if errs == 0 and notunique == 0:
+    if errs == 0 and np.size(notunique) == 0:
         print("We found no errors in neither the student IDs nor the grades of the loaded data.\n")
     
     
