@@ -1,9 +1,6 @@
 import pandas as pd
 import numpy as np
 
-
-
-
 def dataLoad(filename):
     """
     Reads csv file to dataframe.
