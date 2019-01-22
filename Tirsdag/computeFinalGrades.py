@@ -1,6 +1,7 @@
 import numpy as np
 from roundGrade import roundGrade
 
+#RESPONSIBLE: Kasper Telkamp Nielsen, s170397.
 
 def computeFinalGrades(grades):
     

@@ -1,10 +1,14 @@
+
+
+#RESPONSIBLE: Freja Terp Petersen, s184321.
+
 # Import libraries
 
 import numpy as np
 import os
+import pandas as pd
 from displayMenu import *
-from dataLoad import dataLoad
-from dataCheck import *
+from dataCheck import dataCheck
 from gradesPlot import gradesPlot
 from dataToGrades import dataToGrades
 from generateListGrades import generateListGrades
@@ -20,6 +24,8 @@ correctErrors = np.array(["Yes", "No"])
 #Load in data
 while True:
     
+    print("Velkomst")
+    
     print("Enter the filename of a CSV-file or enter 0 to quit the program.")
     filename = input("Please enter filename: ")
     
@@ -34,17 +40,18 @@ while True:
     elif  filename.endswith(".csv") and os.path.isfile(filename):
         
         #   Load in data
-        dfdata = dataLoad(filename)
+        dfdata = pd.read_csv(filename)
         data = np.array(dfdata)
         grades = dataToGrades(data)
         
         #   Service message
         print("\nThe data, {}, has been succesfully loaded.".format(filename))
         print("There is a total number of {} students in the loaded data, and the number of graded assignments is {}.\n".format(len(data), len(data[0,:])-2))
-        
+       
         while True:
             choice = displayMenu(menuItems)
-            
+ 
+#-----------------------------------------------------------------------------           
             if choice == 1:
                 while True:
                     print("Enter the filename of a CSV-file or enter 0 to exit to the main menu.")
@@ -60,7 +67,7 @@ while True:
                         print("\nThe data, {}, has been succesfully loaded.".format(filename))
                         
                         #   Load in data
-                        dfdata = dataLoad(filename)
+                        dfdata = pd.read_csv(filename)
                         data = np.array(dfdata)
                         grades = dataToGrades(data)
                         
@@ -69,7 +76,9 @@ while True:
                 
                     else:
                         print("\nDU ER DUM\n")
-                
+
+#-----------------------------------------------------------------------------
+### RESPONSIBLE: Kasper Telkamp Nielsen, s170397.              
             if choice == 2:
                 
                 errs = dataCheck(data)
@@ -112,7 +121,8 @@ while True:
                                             print(gradeScale)
                                             pass
                                                  
-                
+ #-----------------------------------------------------------------------------              
+#RESPONSIBLE: Anna Sophie Bjerremand Jensen, s174349.
             if choice == 3:
                 while True:
                     #   Checks if there is any data left in the data set.
@@ -131,7 +141,7 @@ while True:
                         #   Break to main menu
                         break
             
-            
+                
             if choice == 4:
                 while True:
                  #   Checks if there is any data left in the data set.
@@ -148,10 +158,10 @@ while True:
                         print("\n")
                         
                         break
+                    
                 
-            
             if choice == 5:
                 break
-        
-    #   Quit the program   
-    break
+            
+        #   Quit the program   
+        break

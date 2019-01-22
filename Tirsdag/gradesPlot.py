@@ -3,6 +3,8 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from computeFinalGrades import computeFinalGrades
 
+#RESPONSIBLE: Freja Terp Petersen, s184321.
+
 def gradesPlot(grades):
     finalGrades = computeFinalGrades(grades)
 

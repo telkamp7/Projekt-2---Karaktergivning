@@ -1,8 +1,9 @@
 import numpy as np
 import pandas as pd
-
 from dataLoad import *
 from dataToGrades import dataToGrades
+
+#RESPONSIBLE: Anna Sophie Bjerremand Jensen, s174349.
 
 
 def dataCheck(data):

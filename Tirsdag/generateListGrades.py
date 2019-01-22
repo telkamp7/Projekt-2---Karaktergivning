@@ -3,6 +3,8 @@ import pandas as pd
 from dataLoad import dataLoad
 from computeFinalGrades import computeFinalGrades
 
+#RESPONSIBLE: Freja Terp Petersen, s184321.
+
 def generateListGrades(dfdata, grades):
     
     finalGrades = computeFinalGrades(grades)

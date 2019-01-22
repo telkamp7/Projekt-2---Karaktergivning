@@ -1,5 +1,7 @@
 import numpy as np
 
+#RESPONSIBLE: Anna Sophie Bjerremand Jensen, s174349.
+
 def roundGrade(grades):
     
     #   We set up bins. If the value is between two bins, it is assigned an

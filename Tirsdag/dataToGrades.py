@@ -1,3 +1,5 @@
+#RESPONSIBLE: Kasper Telkamp Nielsen, s170397.
+
 def dataToGrades(data):
     
     #Counting number of columns

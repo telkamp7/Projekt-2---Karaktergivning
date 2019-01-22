@@ -9,7 +9,7 @@ def inputNumber(prompt):
     """
     """
     Opgaven er udelukkende udarbejdet i fælleskab.
-    ANSVAR: 
+    RESPONSIBLE: Kasper Telkamp Nielsen, s170397.
     
     """
     

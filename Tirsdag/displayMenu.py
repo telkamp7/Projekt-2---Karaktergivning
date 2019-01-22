@@ -1,6 +1,9 @@
 
 import numpy as np
 from inputNumber import inputNumber
+
+#RESPONSIBLE: Anna Sophie Bjerremand Jensen, s174349.
+
 def displayMenu(options):
     """
     Dette script er lånt fra undervisningsmaterialet 'modules_python.pdf' 
