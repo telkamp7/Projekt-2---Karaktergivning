@@ -10,7 +10,7 @@ def gradesPlot(grades):
     counts = np.array([])
     gradeScale = np.array([-3,0,2,4,7,10,12])
     for i in gradeScale:
-        counts = np.append(counts, list(finalGrades).count(i)).astype(int)
+        counts = np.append(counts, np.count_nonzero(finalGrades == i)).astype(int)
     
     #Vectors, which names the ticks and decides their position.
     tickshist = ("-3","00","02","4","7","10","12")
@@ -27,7 +27,7 @@ def gradesPlot(grades):
     
     
     #Defining scalar with number of assignments.
-    num_assignments = len(data[0,:]) - 2
+    num_assignments = len(grades[0,:])
     
     #Variables which control the making of legend labels.
     v = 0
