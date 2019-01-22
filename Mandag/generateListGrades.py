@@ -1,8 +1,11 @@
 import numpy as np
 import pandas as pd
 from dataLoad import dataLoad
+from computeFinalGrades import computeFinalGrades
 
-def generateListGrades(filename, finalGrades):
+def generateListGrades(filename, grades):
+    
+    finalGrades = computeFinalGrades(grades)
     
     #Import data with the dataLoad function.
     dfdata = dataLoad(filename)
