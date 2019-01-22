@@ -6,6 +6,7 @@ from displayMenu import *
 from dataLoad import dataLoad
 from dataCheck import dataCheck
 from gradesPlot import gradesPlot
+from dataToGrades import dataToGrades
 
 # Define menu items
 menuItems = np.array(["Load new data", "Check for data errors", "Generate plots", "Display list of grades", "Quit"])
@@ -35,6 +36,7 @@ while True:
         
         #   Load in data
         data = dataLoad(filename)
+        grades = dataToGrades(data)
         
         while True:
             choice = displayMenu(menuItems)
@@ -55,6 +57,9 @@ while True:
                         
                         #   Load in data
                         data = dataLoad(filename)
+                        grades = dataToGrades(data)
+                        
+                        #   Break to main menu
                         break
                 
                     else:
