@@ -5,6 +5,7 @@ import os
 from displayMenu import *
 from dataLoad import dataLoad
 from dataCheck import dataCheck
+from gradesPlot import gradesPlot
 
 # Define menu items
 menuItems = np.array(["Load new data", "Check for data errors", "Generate plots", "Display list of grades", "Quit"])
@@ -63,7 +64,23 @@ while True:
                 dataCheck(data)
                 
             if choice == 3:
-                break
+                while True:
+                    #   Checks if there is any data left in the data set.
+                    if np.size(data) == 0:
+                    #   Prints an error message if data is empty
+                        print("There is no data left in your data-set")
+                    
+                        #   Break to main menu
+                        break
+              
+                    else:
+                        #   Show the diagrams
+                        gradesPlot(data)
+                        #   Prints a service message
+                        print("Your diagrams has been succesfully shown")
+                        #   Break to main menu
+                        break
+            
             
             if choice == 4:
                 break
