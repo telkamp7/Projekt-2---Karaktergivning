@@ -2,8 +2,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from computeFinalGrades import computeFinalGrades
+from dataToGrades import dataToGrades
 
-def gradesPlot(grades):
+def gradesPlot(data):
+    grades =  dataToGrades(data)
     finalGrades = computeFinalGrades(grades)
 
     #For-loop which counts frequencies of grades.
