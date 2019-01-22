@@ -17,7 +17,9 @@ def dataCheck(data):
     notunique = unique[uniquecnt > 1]
     
     #   Fill the list 'err' with information on the not unique student IDs.
-    err = pd.DataFrame([data[studentID == i] for i in notunique])
+    err = [data[studentID == i] for i in notunique]
+    
+    err = np.concatenate(err, axis=0 )
     
     #   Print errormessages. 
     if len(notunique)>0:
@@ -45,7 +47,7 @@ def dataCheck(data):
             if not np.any(grades[i,j] == gradeScale):
                 #Prints the name and student ID of the student that has an incorect grade according to the grading scale
                 #plus the assignment in which the mistake occurs. 
-                print("{:s}, {:s} has an incorrect grade in assignment {}.".format(data[i,1],data[i,0],j+1))
+                print("{:s}, {:s} has an invalid grade in assignment {}.".format(data[i,1],data[i,0],j+1))
                 errs += 1
     
     if errs == 0 and np.size(notunique) == 0:
