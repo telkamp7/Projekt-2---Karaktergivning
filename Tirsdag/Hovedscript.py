@@ -76,7 +76,7 @@ while True:
                 
                 if errs != 0:
                 
-                    print("\nDu you wish to correct the errors?")
+                    print("\nDo you wish to correct the errors on the grades?")
                     yesno = displayMenu(correctErrors)
                 
                     if yesno == 2:
@@ -127,7 +127,7 @@ while True:
                         #   Show the diagrams
                         gradesPlot(grades)
                         #   Prints a service message
-                        print("Your diagrams has been succesfully shown")
+                        print("Text me please.")
                         #   Break to main menu
                         break
             
