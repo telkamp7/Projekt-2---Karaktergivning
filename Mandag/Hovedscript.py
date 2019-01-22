@@ -31,12 +31,14 @@ while True:
     
     elif  filename.endswith(".csv") and os.path.isfile(filename):
         
-        #   Service message
-        print("\nThe data, {}, has been succesfully loaded.".format(filename))
-        
         #   Load in data
         data = dataLoad(filename)
+        data = np.array(data)
         grades = dataToGrades(data)
+        
+        #   Service message
+        print("\nThe data, {}, has been succesfully loaded.".format(filename))
+        print("There is a total number of {} students in the loaded data, and the number of graded assignments is {}.\n".format(len(data), len(data[0,:])-2))
         
         while True:
             choice = displayMenu(menuItems)
@@ -57,6 +59,7 @@ while True:
                         
                         #   Load in data
                         data = dataLoad(filename)
+                        data = np.array(data)
                         grades = dataToGrades(data)
                         
                         #   Break to main menu
@@ -80,7 +83,7 @@ while True:
               
                     else:
                         #   Show the diagrams
-                        gradesPlot(data)
+                        gradesPlot(grades)
                         #   Prints a service message
                         print("Your diagrams has been succesfully shown")
                         #   Break to main menu
@@ -88,6 +91,10 @@ while True:
             
             
             if choice == 4:
+                
+                
+                
+                
                 break
             
             if choice == 5:
