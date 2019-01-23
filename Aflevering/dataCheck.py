@@ -5,9 +5,14 @@ but it has been divided into sections, each with a responsible group member.
 
 """
 
+"""
+
+The whole assignment has been worked out by the whole group in collaboration,
+but it has been divided into sections, each with a responsible group member.
+
+"""
+
 import numpy as np
-import pandas as pd
-from dataLoad import *
 from dataToGrades import dataToGrades
 
 #RESPONSIBLE: Anna Sophie Bjerremand Jensen, s174349.
@@ -33,7 +38,7 @@ def dataCheck(data):
     
         #   Print errormessages. 
         if len(notunique)>0:
-            print("The following student ID(s) were found to be duplicates: {}".format(notunique))
+            print("\nThe following student ID(s) were found to be duplicates: {}".format(notunique))
             print("We found the following information on the student ID(s): \n{}\n".format(err),sep = "\n")
         
 
