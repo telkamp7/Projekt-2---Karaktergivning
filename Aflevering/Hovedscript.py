@@ -10,6 +10,10 @@ RESPONSIBLE: Freja Terp Petersen, s184321.
 """
 
 #   Importing libraries and functions. 
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+img = mpimg.imread("dtulogo.jpg")
+
 import numpy as np
 import os
 import pandas as pd
@@ -227,6 +231,11 @@ while True:
                     
             #The 5th choice of the main menu breaks/quits the program
             if choice == 5:
+                plt.xticks([])
+                plt.yticks([])
+                imgplot = plt.imshow(img)
+                
+                
                 #Breaks the main while-loop
                 break
             
