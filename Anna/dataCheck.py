@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+from dataLoad import *
 from dataToGrades import dataToGrades
 
 #RESPONSIBLE: Anna Sophie Bjerremand Jensen, s174349.
@@ -7,20 +8,20 @@ from dataToGrades import dataToGrades
 
 def dataCheck(data):
     
-    #   Define the column with student IDs as vector.
+    #Define the first column loaded data (csv-file) with student IDs as vector. 
     studentID = data[:,0]
     
-    #   Find and count the unique studentIDs and put them into vectors.
+    #Find and count the unique studentIDs and put them into vectors.
     unique, uniquecnt = np.unique(studentID, return_counts = True)
-    #   Fill the vector 'notunique' with the studentIDs from 'unique-vector' 
-    #   which appear twice according to the 'uniquecnt'-vector.
+    #Fill the vector 'notunique' with the studentIDs from 'unique-vector' 
+    #which appear twice according to the 'uniquecnt'-vector.
     notunique = unique[uniquecnt > 1]
     
-    #   Fill the list 'err' with information on the not unique student IDs.
+    #Fill the list 'err' with information on the not unique student IDs.
     err = [data[studentID == i] for i in notunique]
     
+    #check if there is a error in the studentnumbers of the loaded data, and adds the row to err. 
     if np.size(err) > 0:
-    
         err = np.concatenate(err, axis=0 )
     
         #   Print errormessages. 
@@ -33,25 +34,27 @@ def dataCheck(data):
     #Define a vector with the grading scale:
     gradeScale = np.array([-3,0,2,4,7,10,12])
      
-    #We call the function to convert the data into only grades.
+    #We call the function dataToGrades to convertextract the grades from the loaded data.
     grades = dataToGrades(data)
     
-    #Define length of matrix containing all the grades 
+    #Define the length of matrix containing all the grades which will be used in the for-loop
     n = len(grades)
     
+    #Sets errs = 0 
     errs = 0
-    #Create a for-loop that checks if the grade givin is contained in the grading scale:
+    
+    #Create two for-loops that loops throug each element in the matrix containing the grades
+    #and checks if the grade givin is a valid grade according to the grading scale:
     for i in range(n):
-        #Only checks the columns that contains grades (numcol-2)
         for j in range(len(grades[0,:])):
-            #If the grade is within the Scale, inserts a true
-
-            if not np.any(grades[i,j] == gradeScale):
-                #Prints the name and student ID of the student that has an incorect grade according to the grading scale
+            
+            #If the grade is within the Scale - prints the name and student ID of the student that has an invalid grade according to the grading scale
                 #plus the assignment in which the mistake occurs. 
+            if not np.any(grades[i,j] == gradeScale):
                 print("{:s}, {:s} has an invalid grade in assignment {}.".format(data[i,1],data[i,0],j+1))
                 errs += 1
-    
+                
+    #If the loaded data doesn´t have an error in neither the student Id nor the grades, prints a service message to the user.
     if errs == 0 and np.size(notunique) == 0:
         print("\nWe found no errors in neither the student IDs nor the grades of the loaded data.\n")
 
