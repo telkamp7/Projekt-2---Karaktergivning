@@ -1,4 +1,4 @@
-  """
+"""
 Dette script er lånt fra undervisningsmaterialet 'modules_python.pdf' 
 side 64 men indeholder betydelige ændringer.
 
