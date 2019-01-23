@@ -28,5 +28,6 @@ def inputNumber(prompt):
             num = float(input(prompt))
             break
         except ValueError:
+            print("\nAn error occurred. Make sure to input a number from the menu.")
             pass
     return num
