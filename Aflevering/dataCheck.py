@@ -1,21 +1,25 @@
 """
+Function:       dataCheck: checks for errors in the loaded data and iprints messages to inform the user
+    
+Input:          Dataframe of the loaded data
 
+    
+Output:         A scalar - errs: counts the number of invalid grades 
+                Error messages that informs the user of the specifications of the errors: 
+                - Identical student IDs
+                - Invalid grades 
+                
+    
+    Respomsible: Kasper Telkamp Nielsen, s170397
 The whole assignment has been worked out by the whole group in collaboration,
 but it has been divided into sections, each with a responsible group member.
 
-"""
-
-"""
-
-The whole assignment has been worked out by the whole group in collaboration,
-but it has been divided into sections, each with a responsible group member.
+RESPONSIBLE: Anna Sophie Bjerremand Jensen, s174349.
 
 """
 
 import numpy as np
 from dataToGrades import dataToGrades
-
-#RESPONSIBLE: Anna Sophie Bjerremand Jensen, s174349.
 
 
 def dataCheck(data):
