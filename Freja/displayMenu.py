@@ -1,13 +1,13 @@
 
 import numpy as np
-from inputNumber import inputNumber
+from inputNumber import *
 
 #RESPONSIBLE: Anna Sophie Bjerremand Jensen, s174349.
 
 def displayMenu(options):
     """
     Dette script er lånt fra undervisningsmaterialet 'modules_python.pdf' 
-    side 64 men indeholder ændringer.
+    side 64 men indeholder betydelige ændringer.
     
     Forfatter: Mikkel N. Schmidt, mnsc@dtu.dk, 2015
     
@@ -35,8 +35,16 @@ def displayMenu(options):
     #   Set choice = 0 
     choice = 0
     #   If the input number is equal to one of the options numbers
-    while not(np.any(choice == np.arange(len(options))+1)):
-        #   Prints a message for the user
+    
+    #This while loop has been crafted by the group. 
+    while True:
         choice = inputNumber("Please, choose a number from the options: ")
+        
+        if not np.any(choice == np.arange(len(options)+1)):
+            print("\nAn error occurred. Make sure to input a number from the menu.")
+            pass
+        
+        else:
+            break
         
     return choice

@@ -151,6 +151,7 @@ while True:
                                             print("Invalid input. Your input should be a number from the grade scale:")
                                             print(gradeScale)
                                             pass
+                        #print("\nAll of the invalid grades have been viewed and corrected if you wished to.\n")                
                                                  
  #-----------------------------------------------------------------------------              
 #RESPONSIBLE: Anna Sophie Bjerremand Jensen, s174349.
