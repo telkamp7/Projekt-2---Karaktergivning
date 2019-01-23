@@ -1,6 +1,15 @@
+"""
+ Function:       roundGrades: Takes the mean vallue of all the greated assignments for each student (the final grade)
+                 and rounds it to a valid great from the gradeScale
+    
+ Input:          A vector containing the finalgrade for each student in the loaded data
+        
+ Output:         A vector containing the rounded final grade for each student in the loaded data
+    
+ Respomsible: Anna Sophie Bjerremand Jensen, s174349.
+"""
 import numpy as np
 
-#RESPONSIBLE: Anna Sophie Bjerremand Jensen, s174349.
 
 def roundGrade(grades):
     
