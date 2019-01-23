@@ -19,7 +19,9 @@ RESPONSIBLE: Freja Terp Petersen, s184321.
 
 #   We import the pandas package and the computeFinalGrades function.
 import pandas as pd
+import numpy as np
 from computeFinalGrades import computeFinalGrades
+from dataCheck import dataCheck
 
 def generateListGrades(dfdata, grades):
     
@@ -46,6 +48,14 @@ def generateListGrades(dfdata, grades):
     pd.set_option('display.max_columns', None)
     pd.set_option('display.max_rows', None)
     pd.set_option('display.max_colwidth', -1)
+        
+
+    gradeScale = np.array([-3,0,2,4,7,10,12])
+    ingradescale = np.array([[np.any(i == gradeScale)]for i in np.reshape(grades, np.size(grades))])
+    if np.any(ingradescale == False):
+        print("\nNote that there are one or more invalid grades in the data set.")
+        print("This may affect the final grades column.\n")
+    
     
     return(listGrades)
     
